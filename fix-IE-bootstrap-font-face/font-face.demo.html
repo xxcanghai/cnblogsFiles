@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>bootstrap Font-face Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="initial-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="renderer" content="webkit" />
+
+    <script src="js/jquery-1.9.1.js"></script>
+    <link href="bootstrap3.0/css/bootstrap.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="bootstrap3.0/javascript/html5shiv.js"></script>
+        <script src="bootstrap3.0/javascript/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body {padding: 20px;overflow-x: hidden;font-family: "微软雅黑"; }
+        .iconBox { }
+        .glyphicon {font-size: 30px;padding: 30px;cursor: pointer;vertical-align: middle;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/IEfix.png, sizingMethod=crop);zoom: 1;transition: all 0.1s linear 0s; }
+        .glyphicon:hover {color: rgb(21, 141, 211);font-size: 70px;padding: 10px; }
+        .glyphicon span {display: none;position: absolute;font-size: 20px;background-color: white;width: 200px;margin-left: -65px;text-align: center;font-family: "微软雅黑"; }
+        .glyphicon:hover span { display: block !important; }
+    </style>
+    <style>
+        html.fix-ie-font-face :before,
+        html.fix-ie-font-face :after {
+            content: none !important;
+        }</style>
+    <script>
+        //重设伪类，使字体强制生效
+        !(function redrawFontFace() {
+            if ($.support.leadingWhitespace) return;
+            $(window).one("load", function() {
+                console.log("onload!!!!!!!!!!!");
+                $('html').addClass('fix-ie-font-face');
+                setTimeout(function() {
+                    $('html').removeClass('fix-ie-font-face');
+                }, 10);
+            });
+        }());
+    </script>
+    <script>
+        $(function () {
+            init();
+
+            function init() {
+                $(".iconBox").on("click", ".glyphicon", iconOnClick);
+            }
+
+            //点击图标显示类名
+            function iconOnClick(e) {
+                var clsName = "." + $(this).attr("class").split(" ").join(" .");
+                $(".iconClass").val(clsName);
+            }
+        })
+    </script>
+</head>
+<body>
+    <h1>bootstrap图标字体一览</h1>
+    <h1 style="border: 1px solid gray;"></h1>
+    <div>
+        <span>选择的图标class：</span>
+        <input type="text" class="iconClass" placeholder="点击图标显示class名称" style="width: 300px;" />
+    </div>
+    <div class="iconBox">
+        <span class="glyphicon glyphicon-asterisk"><span>asterisk</span>
+        </span><span class="glyphicon glyphicon-plus"><span>plus</span>
+        </span><span class="glyphicon glyphicon-euro"><span>euro</span>
+        </span><span class="glyphicon glyphicon-eur"><span>eur</span>
+        </span><span class="glyphicon glyphicon-minus"><span>minus</span>
+        </span><span class="glyphicon glyphicon-cloud"><span>cloud</span>
+        </span><span class="glyphicon glyphicon-envelope"><span>envelope</span>
+        </span><span class="glyphicon glyphicon-pencil"><span>pencil</span>
+        </span><span class="glyphicon glyphicon-glass"><span>glass</span>
+        </span><span class="glyphicon glyphicon-music"><span>music</span>
+        </span><span class="glyphicon glyphicon-search"><span>search</span>
+        </span><span class="glyphicon glyphicon-heart"><span>heart</span>
+        </span><span class="glyphicon glyphicon-star"><span>star</span>
+        </span><span class="glyphicon glyphicon-star-empty"><span>star-empty</span>
+        </span><span class="glyphicon glyphicon-user"><span>user</span>
+        </span><span class="glyphicon glyphicon-film"><span>film</span>
+        </span><span class="glyphicon glyphicon-th-large"><span>th-large</span>
+        </span><span class="glyphicon glyphicon-th"><span>th</span>
+        </span><span class="glyphicon glyphicon-th-list"><span>th-list</span>
+        </span><span class="glyphicon glyphicon-ok"><span>ok</span>
+        </span><span class="glyphicon glyphicon-remove"><span>remove</span>
+        </span><span class="glyphicon glyphicon-zoom-in"><span>zoom-in</span>
+        </span><span class="glyphicon glyphicon-zoom-out"><span>zoom-out</span>
+        </span><span class="glyphicon glyphicon-off"><span>off</span>
+        </span><span class="glyphicon glyphicon-signal"><span>signal</span>
+        </span><span class="glyphicon glyphicon-cog"><span>cog</span>
+        </span><span class="glyphicon glyphicon-trash"><span>trash</span>
+        </span><span class="glyphicon glyphicon-home"><span>home</span>
+        </span><span class="glyphicon glyphicon-file"><span>file</span>
+        </span><span class="glyphicon glyphicon-time"><span>time</span>
+        </span><span class="glyphicon glyphicon-road"><span>road</span>
+        </span><span class="glyphicon glyphicon-download-alt"><span>download-alt</span>
+        </span><span class="glyphicon glyphicon-download"><span>download</span>
+        </span><span class="glyphicon glyphicon-upload"><span>upload</span>
+        </span><span class="glyphicon glyphicon-inbox"><span>inbox</span>
+        </span><span class="glyphicon glyphicon-play-circle"><span>play-circle</span>
+        </span><span class="glyphicon glyphicon-repeat"><span>repeat</span>
+        </span><span class="glyphicon glyphicon-refresh"><span>refresh</span>
+        </span><span class="glyphicon glyphicon-list-alt"><span>list-alt</span>
+        </span><span class="glyphicon glyphicon-lock"><span>lock</span>
+        </span><span class="glyphicon glyphicon-flag"><span>flag</span>
+        </span><span class="glyphicon glyphicon-headphones"><span>headphones</span>
+        </span><span class="glyphicon glyphicon-volume-off"><span>volume-off</span>
+        </span><span class="glyphicon glyphicon-volume-down"><span>volume-down</span>
+        </span><span class="glyphicon glyphicon-volume-up"><span>volume-up</span>
+        </span><span class="glyphicon glyphicon-qrcode"><span>qrcode</span>
+        </span><span class="glyphicon glyphicon-barcode"><span>barcode</span>
+        </span><span class="glyphicon glyphicon-tag"><span>tag</span>
+        </span><span class="glyphicon glyphicon-tags"><span>tags</span>
+        </span><span class="glyphicon glyphicon-book"><span>book</span>
+        </span><span class="glyphicon glyphicon-bookmark"><span>bookmark</span>
+        </span><span class="glyphicon glyphicon-print"><span>print</span>
+        </span><span class="glyphicon glyphicon-camera"><span>camera</span>
+        </span><span class="glyphicon glyphicon-font"><span>font</span>
+        </span><span class="glyphicon glyphicon-bold"><span>bold</span>
+        </span><span class="glyphicon glyphicon-italic"><span>italic</span>
+        </span><span class="glyphicon glyphicon-text-height"><span>text-height</span>
+        </span><span class="glyphicon glyphicon-text-width"><span>text-width</span>
+        </span><span class="glyphicon glyphicon-align-left"><span>align-left</span>
+        </span><span class="glyphicon glyphicon-align-center"><span>align-center</span>
+        </span><span class="glyphicon glyphicon-align-right"><span>align-right</span>
+        </span><span class="glyphicon glyphicon-align-justify"><span>align-justify</span>
+        </span><span class="glyphicon glyphicon-list"><span>list</span>
+        </span><span class="glyphicon glyphicon-indent-left"><span>indent-left</span>
+        </span><span class="glyphicon glyphicon-indent-right"><span>indent-right</span>
+        </span><span class="glyphicon glyphicon-facetime-video"><span>facetime-video</span>
+        </span><span class="glyphicon glyphicon-picture"><span>picture</span>
+        </span><span class="glyphicon glyphicon-map-marker"><span>map-marker</span>
+        </span><span class="glyphicon glyphicon-adjust"><span>adjust</span>
+        </span><span class="glyphicon glyphicon-tint"><span>tint</span>
+        </span><span class="glyphicon glyphicon-edit"><span>edit</span>
+        </span><span class="glyphicon glyphicon-share"><span>share</span>
+        </span><span class="glyphicon glyphicon-check"><span>check</span>
+        </span><span class="glyphicon glyphicon-move"><span>move</span>
+        </span><span class="glyphicon glyphicon-step-backward"><span>step-backward</span>
+        </span><span class="glyphicon glyphicon-fast-backward"><span>fast-backward</span>
+        </span><span class="glyphicon glyphicon-backward"><span>backward</span>
+        </span><span class="glyphicon glyphicon-play"><span>play</span>
+        </span><span class="glyphicon glyphicon-pause"><span>pause</span>
+        </span><span class="glyphicon glyphicon-stop"><span>stop</span>
+        </span><span class="glyphicon glyphicon-forward"><span>forward</span>
+        </span><span class="glyphicon glyphicon-fast-forward"><span>fast-forward</span>
+        </span><span class="glyphicon glyphicon-step-forward"><span>step-forward</span>
+        </span><span class="glyphicon glyphicon-eject"><span>eject</span>
+        </span><span class="glyphicon glyphicon-chevron-left"><span>chevron-left</span>
+        </span><span class="glyphicon glyphicon-chevron-right"><span>chevron-right</span>
+        </span><span class="glyphicon glyphicon-plus-sign"><span>plus-sign</span>
+        </span><span class="glyphicon glyphicon-minus-sign"><span>minus-sign</span>
+        </span><span class="glyphicon glyphicon-remove-sign"><span>remove-sign</span>
+        </span><span class="glyphicon glyphicon-ok-sign"><span>ok-sign</span>
+        </span><span class="glyphicon glyphicon-question-sign"><span>question-sign</span>
+        </span><span class="glyphicon glyphicon-info-sign"><span>info-sign</span>
+        </span><span class="glyphicon glyphicon-screenshot"><span>screenshot</span>
+        </span><span class="glyphicon glyphicon-remove-circle"><span>remove-circle</span>
+        </span><span class="glyphicon glyphicon-ok-circle"><span>ok-circle</span>
+        </span><span class="glyphicon glyphicon-ban-circle"><span>ban-circle</span>
+        </span><span class="glyphicon glyphicon-arrow-left"><span>arrow-left</span>
+        </span><span class="glyphicon glyphicon-arrow-right"><span>arrow-right</span>
+        </span><span class="glyphicon glyphicon-arrow-up"><span>arrow-up</span>
+        </span><span class="glyphicon glyphicon-arrow-down"><span>arrow-down</span>
+        </span><span class="glyphicon glyphicon-share-alt"><span>share-alt</span>
+        </span><span class="glyphicon glyphicon-resize-full"><span>resize-full</span>
+        </span><span class="glyphicon glyphicon-resize-small"><span>resize-small</span>
+        </span><span class="glyphicon glyphicon-exclamation-sign"><span>exclamation-sign</span>
+        </span><span class="glyphicon glyphicon-gift"><span>gift</span>
+        </span><span class="glyphicon glyphicon-leaf"><span>leaf</span>
+        </span><span class="glyphicon glyphicon-fire"><span>fire</span>
+        </span><span class="glyphicon glyphicon-eye-open"><span>eye-open</span>
+        </span><span class="glyphicon glyphicon-eye-close"><span>eye-close</span>
+        </span><span class="glyphicon glyphicon-warning-sign"><span>warning-sign</span>
+        </span><span class="glyphicon glyphicon-plane"><span>plane</span>
+        </span><span class="glyphicon glyphicon-calendar"><span>calendar</span>
+        </span><span class="glyphicon glyphicon-random"><span>random</span>
+        </span><span class="glyphicon glyphicon-comment"><span>comment</span>
+        </span><span class="glyphicon glyphicon-magnet"><span>magnet</span>
+        </span><span class="glyphicon glyphicon-chevron-up"><span>chevron-up</span>
+        </span><span class="glyphicon glyphicon-chevron-down"><span>chevron-down</span>
+        </span><span class="glyphicon glyphicon-retweet"><span>retweet</span>
+        </span><span class="glyphicon glyphicon-shopping-cart"><span>shopping-cart</span>
+        </span><span class="glyphicon glyphicon-folder-close"><span>folder-close</span>
+        </span><span class="glyphicon glyphicon-folder-open"><span>folder-open</span>
+        </span><span class="glyphicon glyphicon-resize-vertical"><span>resize-vertical</span>
+        </span><span class="glyphicon glyphicon-resize-horizontal"><span>resize-horizontal</span>
+        </span><span class="glyphicon glyphicon-hdd"><span>hdd</span>
+        </span><span class="glyphicon glyphicon-bullhorn"><span>bullhorn</span>
+        </span><span class="glyphicon glyphicon-bell"><span>bell</span>
+        </span><span class="glyphicon glyphicon-certificate"><span>certificate</span>
+        </span><span class="glyphicon glyphicon-thumbs-up"><span>thumbs-up</span>
+        </span><span class="glyphicon glyphicon-thumbs-down"><span>thumbs-down</span>
+        </span><span class="glyphicon glyphicon-hand-right"><span>hand-right</span>
+        </span><span class="glyphicon glyphicon-hand-left"><span>hand-left</span>
+        </span><span class="glyphicon glyphicon-hand-up"><span>hand-up</span>
+        </span><span class="glyphicon glyphicon-hand-down"><span>hand-down</span>
+        </span><span class="glyphicon glyphicon-circle-arrow-right"><span>circle-arrow-right</span>
+        </span><span class="glyphicon glyphicon-circle-arrow-left"><span>circle-arrow-left</span>
+        </span><span class="glyphicon glyphicon-circle-arrow-up"><span>circle-arrow-up</span>
+        </span><span class="glyphicon glyphicon-circle-arrow-down"><span>circle-arrow-down</span>
+        </span><span class="glyphicon glyphicon-globe"><span>globe</span>
+        </span><span class="glyphicon glyphicon-wrench"><span>wrench</span>
+        </span><span class="glyphicon glyphicon-tasks"><span>tasks</span>
+        </span><span class="glyphicon glyphicon-filter"><span>filter</span>
+        </span><span class="glyphicon glyphicon-briefcase"><span>briefcase</span>
+        </span><span class="glyphicon glyphicon-fullscreen"><span>fullscreen</span>
+        </span><span class="glyphicon glyphicon-dashboard"><span>dashboard</span>
+        </span><span class="glyphicon glyphicon-paperclip"><span>paperclip</span>
+        </span><span class="glyphicon glyphicon-heart-empty"><span>heart-empty</span>
+        </span><span class="glyphicon glyphicon-link"><span>link</span>
+        </span><span class="glyphicon glyphicon-phone"><span>phone</span>
+        </span><span class="glyphicon glyphicon-pushpin"><span>pushpin</span>
+        </span><span class="glyphicon glyphicon-usd"><span>usd</span>
+        </span><span class="glyphicon glyphicon-gbp"><span>gbp</span>
+        </span><span class="glyphicon glyphicon-sort"><span>sort</span>
+        </span><span class="glyphicon glyphicon-sort-by-alphabet"><span>sort-by-alphabet</span>
+        </span><span class="glyphicon glyphicon-sort-by-alphabet-alt"><span>sort-by-alphabet-alt</span>
+        </span><span class="glyphicon glyphicon-sort-by-order"><span>sort-by-order</span>
+        </span><span class="glyphicon glyphicon-sort-by-order-alt"><span>sort-by-order-alt</span>
+        </span><span class="glyphicon glyphicon-sort-by-attributes"><span>sort-by-attributes</span>
+        </span><span class="glyphicon glyphicon-sort-by-attributes-alt"><span>sort-by-attributes-alt</span>
+        </span><span class="glyphicon glyphicon-unchecked"><span>unchecked</span>
+        </span><span class="glyphicon glyphicon-expand"><span>expand</span>
+        </span><span class="glyphicon glyphicon-collapse-down"><span>collapse-down</span>
+        </span><span class="glyphicon glyphicon-collapse-up"><span>collapse-up</span>
+        </span><span class="glyphicon glyphicon-log-in"><span>log-in</span>
+        </span><span class="glyphicon glyphicon-flash"><span>flash</span>
+        </span><span class="glyphicon glyphicon-log-out"><span>log-out</span>
+        </span><span class="glyphicon glyphicon-new-window"><span>new-window</span>
+        </span><span class="glyphicon glyphicon-record"><span>record</span>
+        </span><span class="glyphicon glyphicon-save"><span>save</span>
+        </span><span class="glyphicon glyphicon-open"><span>open</span>
+        </span><span class="glyphicon glyphicon-saved"><span>saved</span>
+        </span><span class="glyphicon glyphicon-import"><span>import</span>
+        </span><span class="glyphicon glyphicon-export"><span>export</span>
+        </span><span class="glyphicon glyphicon-send"><span>send</span>
+        </span><span class="glyphicon glyphicon-floppy-disk"><span>floppy-disk</span>
+        </span><span class="glyphicon glyphicon-floppy-saved"><span>floppy-saved</span>
+        </span><span class="glyphicon glyphicon-floppy-remove"><span>floppy-remove</span>
+        </span><span class="glyphicon glyphicon-floppy-save"><span>floppy-save</span>
+        </span><span class="glyphicon glyphicon-floppy-open"><span>floppy-open</span>
+        </span><span class="glyphicon glyphicon-credit-card"><span>credit-card</span>
+        </span><span class="glyphicon glyphicon-transfer"><span>transfer</span>
+        </span><span class="glyphicon glyphicon-cutlery"><span>cutlery</span>
+        </span><span class="glyphicon glyphicon-header"><span>header</span>
+        </span><span class="glyphicon glyphicon-compressed"><span>compressed</span>
+        </span><span class="glyphicon glyphicon-earphone"><span>earphone</span>
+        </span><span class="glyphicon glyphicon-phone-alt"><span>phone-alt</span>
+        </span><span class="glyphicon glyphicon-tower"><span>tower</span>
+        </span><span class="glyphicon glyphicon-stats"><span>stats</span>
+        </span><span class="glyphicon glyphicon-sd-video"><span>sd-video</span>
+        </span><span class="glyphicon glyphicon-hd-video"><span>hd-video</span>
+        </span><span class="glyphicon glyphicon-subtitles"><span>subtitles</span>
+        </span><span class="glyphicon glyphicon-sound-stereo"><span>sound-stereo</span>
+        </span><span class="glyphicon glyphicon-sound-dolby"><span>sound-dolby</span>
+        </span><span class="glyphicon glyphicon-sound-5-1"><span>sound-5-1</span>
+        </span><span class="glyphicon glyphicon-sound-6-1"><span>sound-6-1</span>
+        </span><span class="glyphicon glyphicon-sound-7-1"><span>sound-7-1</span>
+        </span><span class="glyphicon glyphicon-copyright-mark"><span>copyright-mark</span>
+        </span><span class="glyphicon glyphicon-registration-mark"><span>registration-mark</span>
+        </span><span class="glyphicon glyphicon-cloud-download"><span>cloud-download</span>
+        </span><span class="glyphicon glyphicon-cloud-upload"><span>cloud-upload</span>
+        </span><span class="glyphicon glyphicon-tree-conifer"><span>tree-conifer</span>
+        </span><span class="glyphicon glyphicon-tree-deciduous"><span>tree-deciduous</span>
+        </span><span class="glyphicon glyphicon-cd"><span>cd</span>
+        </span><span class="glyphicon glyphicon-save-file"><span>save-file</span>
+        </span><span class="glyphicon glyphicon-open-file"><span>open-file</span>
+        </span><span class="glyphicon glyphicon-level-up"><span>level-up</span>
+        </span><span class="glyphicon glyphicon-copy"><span>copy</span>
+        </span><span class="glyphicon glyphicon-paste"><span>paste</span>
+        </span><span class="glyphicon glyphicon-alert"><span>alert</span>
+        </span><span class="glyphicon glyphicon-equalizer"><span>equalizer</span>
+        </span><span class="glyphicon glyphicon-king"><span>king</span>
+        </span><span class="glyphicon glyphicon-queen"><span>queen</span>
+        </span><span class="glyphicon glyphicon-pawn"><span>pawn</span>
+        </span><span class="glyphicon glyphicon-bishop"><span>bishop</span>
+        </span><span class="glyphicon glyphicon-knight"><span>knight</span>
+        </span><span class="glyphicon glyphicon-baby-formula"><span>baby-formula</span>
+        </span><span class="glyphicon glyphicon-tent"><span>tent</span>
+        </span><span class="glyphicon glyphicon-blackboard"><span>blackboard</span>
+        </span><span class="glyphicon glyphicon-bed"><span>bed</span>
+        </span><span class="glyphicon glyphicon-apple"><span>apple</span>
+        </span><span class="glyphicon glyphicon-erase"><span>erase</span>
+        </span><span class="glyphicon glyphicon-hourglass"><span>hourglass</span>
+        </span><span class="glyphicon glyphicon-lamp"><span>lamp</span>
+        </span><span class="glyphicon glyphicon-duplicate"><span>duplicate</span>
+        </span><span class="glyphicon glyphicon-piggy-bank"><span>piggy-bank</span>
+        </span><span class="glyphicon glyphicon-scissors"><span>scissors</span>
+        </span><span class="glyphicon glyphicon-bitcoin"><span>bitcoin</span>
+        </span><span class="glyphicon glyphicon-yen"><span>yen</span>
+        </span><span class="glyphicon glyphicon-ruble"><span>ruble</span>
+        </span><span class="glyphicon glyphicon-scale"><span>scale</span>
+        </span><span class="glyphicon glyphicon-ice-lolly"><span>ice-lolly</span>
+        </span><span class="glyphicon glyphicon-ice-lolly-tasted"><span>ice-lolly-tasted</span>
+        </span><span class="glyphicon glyphicon-education"><span>education</span>
+        </span><span class="glyphicon glyphicon-option-horizontal"><span>option-horizontal</span>
+        </span><span class="glyphicon glyphicon-option-vertical"><span>option-vertical</span>
+        </span><span class="glyphicon glyphicon-menu-hamburger"><span>menu-hamburger</span>
+        </span><span class="glyphicon glyphicon-modal-window"><span>modal-window</span>
+        </span><span class="glyphicon glyphicon-oil"><span>oil</span>
+        </span><span class="glyphicon glyphicon-grain"><span>grain</span>
+        </span><span class="glyphicon glyphicon-sunglasses"><span>sunglasses</span>
+        </span><span class="glyphicon glyphicon-text-size"><span>text-size</span>
+        </span><span class="glyphicon glyphicon-text-color"><span>text-color</span>
+        </span><span class="glyphicon glyphicon-text-background"><span>text-background</span>
+        </span><span class="glyphicon glyphicon-object-align-top"><span>object-align-top</span>
+        </span><span class="glyphicon glyphicon-object-align-bottom"><span>object-align-bottom</span>
+        </span><span class="glyphicon glyphicon-object-align-horizontal"><span>object-align-horizontal</span>
+        </span><span class="glyphicon glyphicon-object-align-left"><span>object-align-left</span>
+        </span><span class="glyphicon glyphicon-object-align-vertical"><span>object-align-vertical</span>
+        </span><span class="glyphicon glyphicon-object-align-right"><span>object-align-right</span>
+        </span><span class="glyphicon glyphicon-triangle-right"><span>triangle-right</span>
+        </span><span class="glyphicon glyphicon-triangle-left"><span>triangle-left</span>
+        </span><span class="glyphicon glyphicon-triangle-bottom"><span>triangle-bottom</span>
+        </span><span class="glyphicon glyphicon-triangle-top"><span>triangle-top</span>
+        </span><span class="glyphicon glyphicon-console"><span>console</span>
+        </span><span class="glyphicon glyphicon-superscript"><span>superscript</span>
+        </span><span class="glyphicon glyphicon-subscript"><span>subscript</span>
+        </span><span class="glyphicon glyphicon-menu-left"><span>menu-left</span>
+        </span><span class="glyphicon glyphicon-menu-right"><span>menu-right</span>
+        </span><span class="glyphicon glyphicon-menu-down"><span>menu-down</span>
+        </span><span class="glyphicon glyphicon-menu-up"><span>menu-up</span></span>
+    </div>
+</body>
+</html>
