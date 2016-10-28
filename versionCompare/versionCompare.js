@@ -1,6 +1,7 @@
 /**
  * 对比字符串版本号的大小，返回1则v1大于v2，返回-1则v1小于v2，返回0则v1等于v2
  * 
+ * @author github.com/xxcanghai
  * @param {string} v1 要进行比较的版本号1
  * @param {string} v2 要进行比较的版本号2
  * @returns
@@ -34,7 +35,7 @@ function versionCompare(v1, v2) {
 
     //循环比较版本号
     for (var i = 0; i < arrLen; i++) {
-        result = comp(v1arr[i], v2arr[i]);
+        result = xxcanghaiComp(v1arr[i], v2arr[i]);
         if (result == EQU) {
             continue;
         } else {
@@ -43,7 +44,7 @@ function versionCompare(v1, v2) {
     }
     return result;
 
-    function comp(n1, n2) {
+    function xxcanghaiComp(n1, n2) {
         if (typeof n1 != "number") {
             n1 = 0;
         }
