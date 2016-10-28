@@ -1,0 +1,80 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>versionCompare</title>
+    <script src="versionCompare.js"></script>
+</head>
+
+<body>
+    <h1>versionCompare Test</h1>
+    <hr>
+	<div id="testResult"></div>
+    <br><br><br>
+    Test:<br>
+    <input id="v1" type="text" name="" value="11.22.33"> 
+    <input id="v2" type="text" name="" value="011.0022.0.33">
+    <input id="testBtn" type="button" value="test">
+    <br><br>
+    Result:
+    <div id="result"></div>
+
+	<script>
+        
+        var testArr = [
+            ["1", "1"],
+            ["1", "1.0"],
+            ["1", "1.0.0"],
+            ["1.0", "1"],
+            ["1.0", "1.0"],
+            ["1.0.0", "1.0"],
+
+            ["1.1", "1"],
+            ["1.1", "1.1.1"],
+            ["1.1", "1.1.0"],
+            ["1.1.0", "1.1"],
+
+            ["0.1.2", "0.1.2.3"],
+            ["0.1.2", "0.1.3"],
+            ["0.1.2", "0.2.2"],
+            ["0.1.2", "1.1.2"],
+
+            ["10.20.30", "10.20.30"],
+            ["10.20.30", "10.20.30.0.0.0.1"],
+            ["0.10.20.30", "10.20.30"],
+
+            ["1", ""],
+            ["", "1"],
+            ["", "0"],
+            ["", ""],
+        ];
+
+        function test() {
+            function get(id) {
+                return document.getElementById(id);
+            }
+
+            function compChar(compResult) {
+                return (compResult > 0) ? ">" : (compResult < 0) ? "<" : "=";
+            }
+
+            testArr.forEach(line => {
+                var testResult = get("testResult");
+                var compResult = versionCompare(line[0], line[1]);
+                var compStr = compChar(compResult);
+                var str = "'" + line[0] + "' " + compStr + " '" + line[1] + "'<br/>";
+                testResult.innerHTML += str;
+            });
+
+            get("testBtn").onclick = function () {
+                var v1 = get("v1").value;
+                var v2 = get("v2").value;
+                get("result").innerHTML = compChar(versionCompare(v1, v2));
+            };
+        }
+        test();
+
+    </script>
+</body>
+
+</html>
