@@ -52,3 +52,7 @@
 '' = ''
 
 其他测试请点击[Demo](http://xxcanghai.github.io/cnblogsFiles/versionCompare/index.html)
+
+# Blog
+相关博客文章：
+[http://www.cnblogs.com/xxcanghai/p/6007136.html](http://www.cnblogs.com/xxcanghai/p/6007136.html)
